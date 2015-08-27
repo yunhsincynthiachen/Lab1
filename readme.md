@@ -8,6 +8,7 @@ A user should also be able to delete notes from this list and edit notes once th
 ###Rubric
 
 Functionality: 75%
+
 	- Display list of notes: 10% (Of total)
 	- Ability to add notes: 25%
 	- Ability to delete notes: 20%
@@ -15,6 +16,7 @@ Functionality: 75%
 
 
 Code Quality 25%
+
 	- Following good MVC practices 12.5%
 	- Following Android practices 12.5%
 
