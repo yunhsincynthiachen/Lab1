@@ -23,4 +23,4 @@ A user should also be able to delete notes from this list and edit notes once th
 ### Stretch goal
 
 A note taking app doesn't have any real use if notes are erased when you close the application. Figure out a way to persist notes on your device. Likely this will mean using a database.
-Android offers fucntionality to get access to a local SQLite database on the particular phone. More information on that can be found here http://developer.android.com/reference/android/database/sqlite/SQLiteDatabase.html
+Android offers functionality to get access to a local SQLite database on the particular phone. More information on that can be found here http://developer.android.com/reference/android/database/sqlite/SQLiteDatabase.html
