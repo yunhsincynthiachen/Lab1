@@ -7,14 +7,14 @@ A user should also be able to delete notes from this list and edit notes once th
 
 ###Rubric
 
-Functionality: 75%
+- Functionality: 75%
 	- Display list of notes: 10% (Of total)
 	- Ability to add notes: 25%
 	- Ability to delete notes: 20%
 	- Ability to edit notes: 20%
 
 
-Code Quality 25%
+- Code Quality: 25%
 	- Following good MVC practices 12.5%
 	- Following Android practices 12.5%
 
@@ -23,4 +23,4 @@ Code Quality 25%
 ### Stretch goal
 
 A note taking app doesn't have any real use if notes are erased when you close the application. Figure out a way to persist notes on your device. Likely this will mean using a database.
-Android offers fucntionality to get access to a local SQLite database on the particular phone. More information on that can be found here http://developer.android.com/reference/android/database/sqlite/SQLiteDatabase.html
+Android offers functionality to get access to a local SQLite database on the particular phone. More information on that can be found here http://developer.android.com/reference/android/database/sqlite/SQLiteDatabase.html
