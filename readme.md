@@ -21,14 +21,13 @@ A user should also be able to delete items from this list and edit items once th
 
 ### Details
 
-You should have the following classes at a minimum (more recommended (mo classes, mo money)):
+You should have the following class at a minimum (potentially more):
 
 - MainActivity, subclass of Activity
-- GroceriesAdapter, subclass of ArrayAdapter
 
 For information about implementing an AlertDialog, see here: http://www.tutorialspoint.com/android/android_alert_dialoges.htm. Specifically, see the section of modified code of MainActivity.java. The contents of the function named *open* will be most useful.
 
-For more information on ArrayAdapters, see here: https://github.com/codepath/android_guides/wiki/Using-an-ArrayAdapter-with-ListView#using-a-custom-arrayadapter. Read the section called "Using a Custom ArrayAdapter" up to but not including "Populating Data into ListView". Using a class to represent a grocery item is not required (but recommended, and probably necessary if you do stretch goal #2). Therefore, if you don't use a custom data class, it should read *extends ArrayAdapter*, but otherwise is very similar.
+For more information about implementing an ArrayAdapter, see here: https://github.com/codepath/android_guides/wiki/Using-an-ArrayAdapter-with-ListView#using-a-basic-arrayadapter. Only the "Using a Basic ArrayAdapter" section is relevant. 
 
 Please, **please** email us if you have questions at any time. 
 
@@ -40,3 +39,7 @@ Android offers functionality to get access to a local SQLite database on the par
 ### Stretch goal #2
 
 Wouldn't a grocery list be more useful if the user could check items off? Figure out a way to mark notes as done or undone and display this information to the user.
+
+**Note:** for this strech goal, you will have to subclass ArrayAdapter to do anything more than displaying text.
+
+For more information on custom ArrayAdapters, see here: https://github.com/codepath/android_guides/wiki/Using-an-ArrayAdapter-with-ListView#using-a-custom-arrayadapter. Read the section called "Using a Custom ArrayAdapter" up to but not including "Populating Data into ListView". Using a class to represent a grocery item is not required (but recommended, and probably necessary if you do stretch goal #2). Therefore, if you don't use a custom data class, it should read *extends ArrayAdapter*, but otherwise is very similar.
