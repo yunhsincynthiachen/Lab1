@@ -18,6 +18,8 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
         // If you change the database schema, you must increment the database version.
         public static final int DATABASE_VERSION = 1;
         public static final String DATABASE_NAME = "FeedReader.db";
+        public SQLiteDatabase dbwrite = getWritableDatabase();
+        public SQLiteDatabase dbread = getReadableDatabase();
 
         public FeedReaderDbHelper(Context context) {
             super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -25,9 +27,10 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
         public void onCreate(SQLiteDatabase db) {
             db.execSQL(FeedEntry.SQL_CREATE_ENTRIES);
         }
+        public void deleteData(String item) {
+                dbwrite.delete(FeedEntry.TABLE_NAME, FeedEntry.ITEM_NAME + "=?", new String[]{item});
+        }
         public void writeData(String item) {
-        // Gets the data repository in write mode
-                    SQLiteDatabase db = getWritableDatabase();
 
         // Create a new map of values, where column names are the keys
                     ContentValues values = new ContentValues();
@@ -35,13 +38,12 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
 
         // Insert the new row, returning the primary key value of the new row
                     long newRowId;
-                    newRowId = db.insert(
+                    newRowId = dbwrite.insert(
                             FeedEntry.TABLE_NAME,
                             null,
                             values);
         }
         public ArrayList<String> readData(){
-            SQLiteDatabase db = getReadableDatabase();
 
             // Define a projection that specifies which columns from the database
             // you will actually use after this query.
@@ -50,7 +52,7 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
                                 FeedEntry.ITEM_NAME};
 
 
-                        Cursor c = db.query(
+                        Cursor c = dbread.query(
                                 FeedEntry.TABLE_NAME,  // The table to query
                                 projection,                               // The columns to return
                                 null,                                // The columns for the WHERE clause
@@ -72,6 +74,7 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
             }
             return results; //returns the db into arraylist that will be printed by the main activity on create
         }
+
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
             // This database is only a cache for online data, so its upgrade policy is
             // to simply to discard the data and start over

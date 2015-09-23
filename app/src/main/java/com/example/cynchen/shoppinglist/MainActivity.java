@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
         //WHEN LIST VIEW ITEM IS LONGCLICKED: Alert dialog pops up and allows user to choose whether or not they want to delete item
         listview.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, final long id) {
                 final String item = (String) (listview.getItemAtPosition(position)); //Gets the string name based off of the position that is clicked
 
                 AlertDialog.Builder deleteitem = new AlertDialog.Builder(
@@ -105,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int whichButton) {
                         values.remove(item);
                         adapter.notifyDataSetChanged();
+                        readDB.deleteData(item);
                     }
                 });
 
